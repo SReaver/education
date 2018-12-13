@@ -78,7 +78,6 @@ forms.forEach((item) => {
 		};
 
 
-
 		fetch("server.php", {
 				method: "POST",
 				body: formData
@@ -88,19 +87,28 @@ forms.forEach((item) => {
 					statusMessage.innerHTML = "";
 					let success = document.createElement("img");
 					success.src = "img/message-sent.png";
+					success.width = 200;
 					statusMessage.appendChild(success);
 					setTimeout(function () {
 						statusMessage.innerHTML = "";
+						statusMessage.style = "none";
 					}, 5000);
 					clearInput(item);
 				} else {
-					statusMessage.innerHTML = "";
+					statusMessage.style.cssText = "width:365px; margin-top:20px;padding:10px;background: rgba(216,216,216);border-radius: 4px;font-size:18px;border:1px solid red;color:red;display: flex; align-item:center;";
 					let alarm = document.createElement("img");
-					alarm.src = "img/oops.jpg";
-					//alarm.width = 200;
+					alarm.src = "img/warning.svg";
+					alarm.width = 80;
+					alarm.height = 80;
+					let span = document.createElement("span");
+					span.textContent = "Your message couldnt be sent. Please try again later.";
+					span.style.cssText = "display: flex;align-items: center;";
 					statusMessage.appendChild(alarm);
+					statusMessage.appendChild(span);
 					setTimeout(function () {
 						statusMessage.innerHTML = "";
+						statusMessage.style = "none";
+						span.style = "none";
 					}, 5000);
 				}
 
@@ -125,7 +133,7 @@ forms.forEach((item) => {
 		}
 		//Маска ввода номера телефона
 		if (item.elements[i].id === "phone") {
-			let word = ['+', '1', '(', '_', '_', '_', ')', '_', '_', '_', '_', '-', '_', '_', '_', '_'];
+			let word = ['+', '1', '(', '_', '_', '_', ')', '_', '_', '_', '-', '_', '_', '_', '_'];
 			item.elements[i].setSelectionRange(word.indexOf('_'), 1);
 			item.elements[i].addEventListener("keydown", function (e) {
 				let input = item.elements[i];
@@ -173,4 +181,4 @@ let showTeacher = () => {
 	setTimeout(() => {
 		hanson.style.display = "block";
 	}, 3000);
-}
+};
