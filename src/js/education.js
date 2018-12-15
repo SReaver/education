@@ -3,6 +3,6 @@ diff.differences();
 import * as vid from './parts/video.js';
 vid.video();
 import * as slider from './parts/slider.js';
-slider.slider();
+slider.slider(document.querySelectorAll(".main-slider-item"), document.querySelectorAll(".next"), null, 1, document.querySelectorAll(".sidecontrol>a"));
 import * as forms from './parts/forms.js';
 forms.forms();
