@@ -42,6 +42,8 @@ export let slider = (slides, next, prev = null, slideNumber = null, firstSlide =
 			});
 		});
 	}
+	//console.log(next);
+
 	next.forEach((item) => {
 		item.addEventListener("click", (event) => {
 			event.preventDefault();
@@ -58,4 +60,5 @@ export let slider = (slides, next, prev = null, slideNumber = null, firstSlide =
 			});
 		});
 	}
+
 };
