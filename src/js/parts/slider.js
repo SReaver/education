@@ -1,6 +1,6 @@
-export let slider = (slides, next, prev = null, slideNumber = null, firstSlide = null) => {
+export let slider = (slides, next, prev = null, slideNumber = null, firstSlide = null, opacity = null) => {
 	//Main Slider
-	let slideIndex;
+	let slideIndex = 0;
 	let plusSlides = (n) => {
 		slideIndex = slideIndex + n;
 		showSlides(slideIndex);
@@ -19,10 +19,30 @@ export let slider = (slides, next, prev = null, slideNumber = null, firstSlide =
 			if (item == document.querySelectorAll(".main-slider-item")[2]) {
 				document.querySelector(".hanson").style.display = "none";
 			}
+			//console.log(item.getElementsByTagName("*"));
+			if (opacity) {
+				item.querySelectorAll("*").forEach((item) => {
+					if (item.nodeName == "DIV") {
+						item.style.opacity = 0.4;
+					}
+				});
+			}
+
 			item.style.display = "none";
 		});
 		//slideAnimate(slides[slideIndex - 1]);
-		slides[slideIndex - 1].style.display = "block";
+		let t = slides[slideIndex - 1];
+		t.style.display = "block";
+		if (opacity) {
+			t.querySelectorAll("*").forEach((t) => {
+				if (t.nodeName == "DIV") {
+					t.style.opacity = 1;
+				}
+			});
+		}
+
+
+
 		if (slides[slideIndex - 1] == document.querySelectorAll(".main-slider-item")[2]) {
 			setTimeout(() => {
 				document.querySelector(".hanson").style.display = "block";
@@ -30,7 +50,7 @@ export let slider = (slides, next, prev = null, slideNumber = null, firstSlide =
 		}
 	};
 	if (slideNumber) {
-		slideIndex = slideNumber;
+		slideIndex = +slideNumber;
 		showSlides(slideNumber);
 	} else {
 		slideIndex = 0;

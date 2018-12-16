@@ -7,7 +7,9 @@ export let differences = () => {
 		newCard3 = cards[2].cloneNode(true),
 		cardShow = cards[3].cloneNode(true),
 		oldCards = [cards[0], cards[1], cards[2]],
-		newCards = [newCard1, newCard2, newCard3];
+		newCards = [newCard1, newCard2, newCard3],
+		posOld = 0,
+		posNew = 0;
 	officerold.appendChild(cardShow);
 	newCards.forEach((item) => {
 		officernew.insertBefore(item, cards[3]);
@@ -17,9 +19,7 @@ export let differences = () => {
 		item.style.display = "none";
 	});
 
-	let cardPlus = document.querySelectorAll(".card__click .plus"),
-		posOld = 0,
-		posNew = 0;
+	let cardPlus = document.querySelectorAll(".card__click .plus"); //cardPlus нельзя объявлять раньше (вместе со всеми остальными), так как в неё входит cardShow, которая должна сначала создаться
 	cardPlus.forEach((item) => {
 		item.addEventListener("click", () => {
 			if (item.parentNode.parentNode.parentNode == officerold) {

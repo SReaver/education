@@ -5,7 +5,7 @@
  		m1SlideDescr = document.querySelector(".showup__content-title"),
  		m1Slides = document.querySelectorAll(".showup__content-slider .card");
  	m1SlideDescr.appendChild(m1SlideButtons);
- 	m1Slider.slider(m1Slides, [m1SlideButtons.children[1]], [m1SlideButtons.children[0]], 1);
+ 	m1Slider.slider(m1Slides, [m1SlideButtons.children[1]], [m1SlideButtons.children[0]], 1, null, true);
  	for (let i = 0; i < m1Slides.length; i++) {
  		m1Slides[i].href = "modules.html#" + (i + 1);
  	}
