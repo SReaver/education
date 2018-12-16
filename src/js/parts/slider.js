@@ -32,13 +32,40 @@ export let slider = (slides, next, prev = null, slideNumber = null, firstSlide =
 		});
 		//slideAnimate(slides[slideIndex - 1]);
 		let t = slides[slideIndex - 1];
-		t.style.display = "block";
+		//t.style.display = "block";
+
+
 		if (opacity) {
-			t.querySelectorAll("*").forEach((t) => {
-				if (t.nodeName == "DIV") {
-					t.style.opacity = 1;
+			t.querySelectorAll("*").forEach((d) => {
+				if (d.nodeName == "DIV") {
+					//console.log(d);
+					d.style.opacity = 1;
 				}
 			});
+
+			for (let i = slideIndex - 1; i < slideIndex + 2; i++) {
+
+
+
+				if (i == slides.length || i == slides.length + 1) {
+					continue;
+				} else {
+					slides[i].style.display = "block";
+				}
+				/*
+				if (slideIndex - 1 == slides.length - 2) {
+					slides[i].style.display = "block";
+					//slides[1].style.display = "block";
+				}
+				if (slideIndex - 1 == slides.length - 1) {
+					slides[i + 1].style.display = "block";
+					//slides[2].style.display = "block";
+				}
+				*/
+			}
+
+		} else {
+			t.style.display = "block";
 		}
 
 

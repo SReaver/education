@@ -9,6 +9,7 @@
  	for (let i = 0; i < m1Slides.length; i++) {
  		m1Slides[i].href = "modules.html#" + (i + 1);
  	}
+ 	document.querySelector(".showup__content-slider").style.display = "flex";
  	document.querySelector(".showup__content-explore .plus").addEventListener("click", () => {
  		window.location.replace("modules.html#1");
  	});
