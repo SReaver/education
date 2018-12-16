@@ -5,4 +5,4 @@ download.download();
 import * as accordeon from './parts/accordeon.js';
 accordeon.accordeon();
 import * as slider from './parts/slider.js';
-slider.slider(document.querySelectorAll(".module"), document.querySelectorAll(".next"), document.querySelectorAll(".prev"), 1, document.querySelectorAll(".sidecontrol>a"));
+slider.slider(document.querySelectorAll(".module"), document.querySelectorAll(".next"), document.querySelectorAll(".prev"), document.location.href.substring(document.location.href.indexOf("#") + 1), document.querySelectorAll(".sidecontrol>a"));
