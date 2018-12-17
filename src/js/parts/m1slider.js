@@ -1,6 +1,5 @@
  import * as m1Slider from './slider.js';
  export let m1SliderInt = () => {
-
  	let m1SlideButtons = document.querySelectorAll(".modules__info-btns")[0].cloneNode(true),
  		m1SlideDescr = document.querySelector(".showup__content-title"),
  		m1Slides = document.querySelectorAll(".showup__content-slider .card");
@@ -11,6 +10,6 @@
  	}
  	document.querySelector(".showup__content-slider").style.display = "flex";
  	document.querySelector(".showup__content-explore .plus").addEventListener("click", () => {
- 		window.location.replace("modules.html#1");
+ 		window.location.assign("modules.html#1");
  	});
  };
