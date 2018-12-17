@@ -5,7 +5,11 @@ vid.video();
 import * as forms from './parts/forms.js';
 forms.forms();
 import * as mainSlider from './parts/slider.js';
-mainSlider.slider(document.querySelectorAll(".main-slider-item"), document.querySelectorAll(".next"), null, 5, document.querySelectorAll(".sidecontrol>a"));
+mainSlider.slider(document.querySelectorAll(".main-slider-item"), document.querySelectorAll(".next"), null, 1, document.querySelectorAll(".sidecontrol>a"));
+document.querySelectorAll(".main-slider-item").forEach((item) => {
+ item.classList.add("slideInDown");
+});
+
 import * as m1Slider from './parts/m1Slider.js';
 m1Slider.m1SliderInt();
 import * as m3Slider from './parts/m3Slider.js';

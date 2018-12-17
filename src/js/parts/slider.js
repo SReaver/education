@@ -19,12 +19,14 @@ export let slider = (slides, next, prev = null, slideNumber = null, firstSlide =
 			if (item == document.querySelectorAll(".main-slider-item")[2]) {
 				document.querySelector(".hanson").style.display = "none";
 			}
+			item.classList.add("animated");
 			if (opacity) {
 				item.querySelectorAll("*").forEach((item) => {
 					if (item.nodeName == "DIV") {
 						item.style.opacity = 0.4;
 					}
 				});
+				item.classList.add("fadeIn");
 				if (auto) {
 					item.classList.remove("card-active");
 					item.children[2].style.display = "none";
@@ -34,10 +36,9 @@ export let slider = (slides, next, prev = null, slideNumber = null, firstSlide =
 				item.classList.remove("feed__item-active");
 				item.style.height = "min-content";
 			}
-
 			item.style.display = "none";
 		});
-		//slideAnimate(slides[slideIndex - 1]);
+
 		let t = slides[slideIndex - 1];
 
 		if (opacity) {
@@ -63,6 +64,7 @@ export let slider = (slides, next, prev = null, slideNumber = null, firstSlide =
 		}
 		if (special) {
 			t.classList.add("feed__item-active");
+			t.classList.add("fadeIn");
 			for (let i = slideIndex - 1; i < slideIndex + 3; i++) {
 				if (i == slides.length || i == slides.length + 1 || i == slides.length + 2) {
 					continue;
@@ -74,6 +76,7 @@ export let slider = (slides, next, prev = null, slideNumber = null, firstSlide =
 
 		if (slides[slideIndex - 1] == document.querySelectorAll(".main-slider-item")[2]) {
 			setTimeout(() => {
+				document.querySelector(".hanson").classList.add("animated", "fadeIn");
 				document.querySelector(".hanson").style.display = "block";
 			}, 3000);
 		}

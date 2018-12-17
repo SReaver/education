@@ -14,9 +14,11 @@ export let differences = () => {
 	newCards.forEach((item) => {
 		officernew.insertBefore(item, cards[3]);
 		item.style.display = "none";
+		item.classList.add("animated", "fadeIn");
 	});
 	oldCards.forEach((item) => {
 		item.style.display = "none";
+		item.classList.add("animated", "fadeIn");
 	});
 
 	let cardPlus = document.querySelectorAll(".card__click .plus"); //cardPlus нельзя объявлять раньше (вместе со всеми остальными), так как в неё входит cardShow, которая должна сначала создаться
