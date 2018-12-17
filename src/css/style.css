@@ -1390,7 +1390,7 @@ option {
 
 .feed__item {
   width: 241px;
-  min-height: 341px;
+  min-height: 200px;
   border-radius: 8px;
   background-color: #fff;
   padding: 34px 40px 66px 40px;
@@ -1517,6 +1517,7 @@ option {
   padding: 32px 40px 50px 40px;
   -webkit-transition: 0.5s all;
   transition: 0.5s all;
+  overflow: hidden;
 }
 
 .feed__item-active hr {

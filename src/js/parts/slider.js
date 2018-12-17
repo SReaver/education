@@ -1,4 +1,4 @@
-export let slider = (slides, next, prev = null, slideNumber = null, firstSlide = null, opacity = null, auto = null) => {
+export let slider = (slides, next, prev = null, slideNumber = null, firstSlide = null, opacity = null, auto = null, special = null) => {
 	//Main Slider
 	let slideIndex;
 	let plusSlides = (n) => {
@@ -30,6 +30,10 @@ export let slider = (slides, next, prev = null, slideNumber = null, firstSlide =
 					item.children[2].style.display = "none";
 				}
 			}
+			if (special) {
+				item.classList.remove("feed__item-active");
+				item.style.height = "min-content";
+			}
 
 			item.style.display = "none";
 		});
@@ -56,6 +60,16 @@ export let slider = (slides, next, prev = null, slideNumber = null, firstSlide =
 
 		} else {
 			t.style.display = "block";
+		}
+		if (special) {
+			t.classList.add("feed__item-active");
+			for (let i = slideIndex - 1; i < slideIndex + 3; i++) {
+				if (i == slides.length || i == slides.length + 1 || i == slides.length + 2) {
+					continue;
+				} else {
+					slides[i].style.display = "block";
+				}
+			}
 		}
 
 		if (slides[slideIndex - 1] == document.querySelectorAll(".main-slider-item")[2]) {
