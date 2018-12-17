@@ -1,4 +1,4 @@
-export let video = () => {
+let video = () => {
 	let overlay = document.querySelector(".overlay"),
 		frame = document.querySelector("#frame"),
 		close = document.querySelector(".close"),
@@ -39,3 +39,4 @@ export let video = () => {
 		frame.src = data.getAttribute("data-url") + "?autoplay=1&enablejsapi=1";
 	};
 };
+module.exports = video;

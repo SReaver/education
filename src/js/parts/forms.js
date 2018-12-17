@@ -1,4 +1,4 @@
-export let forms = () => {
+let forms = () => {
   //Forms
   let forms = document.querySelectorAll(".form");
   forms.forEach((item) => {
@@ -112,3 +112,4 @@ export let forms = () => {
     }
   });
 };
+module.exports = forms;

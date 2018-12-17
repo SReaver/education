@@ -1,4 +1,4 @@
-export let differences = () => {
+let diff = () => {
 	let officerold = document.querySelector(".officerold"),
 		officernew = document.querySelector(".officernew"),
 		cards = document.querySelectorAll(".officer__card-item"),
@@ -38,3 +38,4 @@ export let differences = () => {
 		});
 	});
 };
+module.exports = diff;

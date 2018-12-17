@@ -1,4 +1,4 @@
-export let slider = (slides, next, prev = null, slideNumber = null, firstSlide = null, opacity = null, auto = null, special = null) => {
+let slider = (slides, next, prev = null, slideNumber = null, firstSlide = null, opacity = null, auto = null, special = null) => {
 	//Main Slider
 	let slideIndex;
 	let plusSlides = (n) => {
@@ -117,3 +117,4 @@ export let slider = (slides, next, prev = null, slideNumber = null, firstSlide =
 	}
 
 };
+module.exports = slider;
