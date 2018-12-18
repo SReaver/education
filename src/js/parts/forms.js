@@ -2,6 +2,12 @@ let forms = () => {
   //Forms
   let forms = document.querySelectorAll(".form");
   forms.forEach((item) => {
+    for (let i = 0; i < item.elements.length; i++) {
+      //if (item.elements[i].type == "input") {
+      item.elements[i].required = "true";
+      //}
+    }
+
     item.addEventListener("submit", function (event) {
       event.preventDefault();
       let statusMessage = document.createElement("div");
